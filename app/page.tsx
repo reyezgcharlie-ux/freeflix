@@ -84,7 +84,6 @@ export default function FreeFlix() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Header */}
       <header className="flex items-center justify-between px-8 py-4 border-b border-gray-800 sticky top-0 z-50 bg-black/95 backdrop-blur">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-3">
@@ -107,7 +106,6 @@ export default function FreeFlix() {
         </div>
       </header>
 
-      {/* Hero */}
       <div className="h-[80vh] bg-gradient-to-b from-black via-black/90 to-black flex items-center px-8 relative">
         <div className="max-w-2xl z-10">
           <div className="inline-block bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold mb-6">
@@ -137,7 +135,6 @@ export default function FreeFlix() {
         </div>
       </div>
 
-      {/* Tendencias */}
       <div className="px-8 pb-20 -mt-10 relative z-20">
         <div className="flex items-center justify-between mb-8">
           <h3 className="text-3xl font-semibold">Tendencias esta semana</h3>
@@ -155,7 +152,6 @@ export default function FreeFlix() {
         </div>
       </div>
 
-      {/* Video Player Modal */}
       {selectedMovie && (
         <VideoPlayer 
           movie={selectedMovie} 
