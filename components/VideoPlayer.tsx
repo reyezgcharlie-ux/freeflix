@@ -1,8 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import Plyr from 'plyr'
-import 'plyr/dist/plyr.css'
+import { useRef } from 'react'
 
 interface VideoPlayerProps {
   movie: any
@@ -11,23 +9,6 @@ interface VideoPlayerProps {
 
 export default function VideoPlayer({ movie, onClose }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const playerRef = useRef<any>(null)
-
-  useEffect(() => {
-    if (videoRef.current) {
-      playerRef.current = new Plyr(videoRef.current, {
-        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'],
-        settings: ['quality', 'speed'],
-        speed: { selected: 1, options: [0.5, 0.75, 1, 1.25, 1.5, 2] }
-      })
-    }
-
-    return () => {
-      if (playerRef.current) {
-        playerRef.current.destroy()
-      }
-    }
-  }, [])
 
   return (
     <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
@@ -51,8 +32,10 @@ export default function VideoPlayer({ movie, onClose }: VideoPlayerProps) {
             className="w-full"
             playsInline
             controls
+            autoPlay
           >
             <source src={movie.videoUrl} type="video/mp4" />
+            Tu navegador no soporta video HTML5.
           </video>
         </div>
 
