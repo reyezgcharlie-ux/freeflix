@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import MovieCard from '@/components/MovieCard'
-import VideoPlayer from '@/components/VideoPlayer'
+import MovieCard from '../components/MovieCard'
+import VideoPlayer from '../components/VideoPlayer'
 
 export default function FreeFlix() {
   const [selectedMovie, setSelectedMovie] = useState<any>(null)
