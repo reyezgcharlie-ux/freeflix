@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie - FreeFlix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar scrolled">
+        <a href="index.html" class="logo">FreeFlix</a>
+    </nav>
+
+    <div class="movie-page">
+        <div class="movie-hero">
+            <img class="movie-backdrop" src="" alt="">
+            <div class="movie-hero-content">
+                <img class="movie-poster" src="" alt="">
+                <div class="movie-info">
+                    <h1 class="movie-title">Cargando...</h1>
+                    <div class="movie-meta">
+                        <span class="movie-rating"><i class="fas fa-star"></i> --</span>
+                        <span class="movie-year">----</span>
+                        <span class="movie-duration">-- min</span>
+                    </div>
+                    <p class="movie-overview">Cargando descripción...</p>
+                    <div class="movie-genres"></div>
+                    <button class="btn-play" onclick="playMovie()">
+                        <i class="fas fa-play"></i> Reproducir
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-player" id="player" style="display: none;">
+            <video controls id="movie-video">
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
