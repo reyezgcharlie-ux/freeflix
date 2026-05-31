@@ -9,34 +9,36 @@
 </head>
 <body>
     <nav class="navbar scrolled">
-        <a href="index.html" class="logo">FreeFlix</a>
+        <div class="nav-left">
+            <a href="index.html" class="logo">FreeFlix</a>
+        </div>
     </nav>
 
     <div class="movie-page">
         <div class="movie-hero">
-            <img class="movie-backdrop" src="" alt="">
+            <img class="movie-backdrop" src="" alt="" id="movie-backdrop">
             <div class="movie-hero-content">
-                <img class="movie-poster" src="" alt="">
+                <img class="movie-poster" src="" alt="" id="movie-poster">
                 <div class="movie-info">
-                    <h1 class="movie-title">Cargando...</h1>
+                    <h1 class="movie-title" id="movie-title">Loading...</h1>
                     <div class="movie-meta">
-                        <span class="movie-rating"><i class="fas fa-star"></i> --</span>
-                        <span class="movie-year">----</span>
-                        <span class="movie-duration">-- min</span>
+                        <span class="movie-rating" id="movie-rating"><i class="fas fa-star"></i> --</span>
+                        <span class="movie-year" id="movie-year">----</span>
+                        <span class="movie-duration" id="movie-duration">-- min</span>
                     </div>
-                    <p class="movie-overview">Cargando descripción...</p>
-                    <div class="movie-genres"></div>
+                    <p class="movie-overview" id="movie-overview">Loading description...</p>
+                    <div class="movie-genres" id="movie-genres"></div>
                     <button class="btn-play" onclick="playMovie()">
-                        <i class="fas fa-play"></i> Reproducir
+                        <i class="fas fa-play"></i> Watch Now
                     </button>
                 </div>
             </div>
         </div>
 
         <div class="video-player" id="player" style="display: none;">
-            <video controls id="movie-video">
-                <source src="" type="video/mp4">
-            </video>
+            <div class="player-wrapper">
+                <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
