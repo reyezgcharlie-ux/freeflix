@@ -1,57 +1,111 @@
-<!-- Dentro de <section class="content-rows"> -->
-
-<!-- Trending Now -->
-<div class="row">
-    <h2 class="row-title">🔥 Trending Now</h2>
-    <div class="row-container">
-        <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
-        <div class="row-posters" id="trending">
-            <!-- Se llena con JS -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeFlix - Watch Free HD Movies & TV Shows</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">FreeFlix</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#movies">Movies</a></li>
+                <li><a href="#tv">TV Shows</a></li>
+                <li><a href="#genres">Genres</a></li>
+            </ul>
         </div>
-        <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
-    </div>
-</div>
-
-<!-- Popular -->
-<div class="row">
-    <h2 class="row-title">⭐ Popular</h2>
-    <div class="row-container">
-        <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
-        <div class="row-posters" id="popular">
-            <!-- Se llena con JS -->
+        <div class="nav-right">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search movies, TV shows...">
+            </div>
         </div>
-        <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
-    </div>
-</div>
+    </nav>
 
-<!-- Top Rated -->
-<div class="row">
-    <h2 class="row-title">🏆 Top Rated</h2>
-    <div class="row-container">
-        <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
-        <div class="row-posters" id="top-rated">
-            <!-- Se llena con JS -->
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" id="hero-title">Loading...</h1>
+            <div class="hero-meta">
+                <span class="rating" id="hero-rating"><i class="fas fa-star"></i> --</span>
+                <span class="year" id="hero-year">----</span>
+                <span class="duration" id="hero-duration">-- min</span>
+                <span class="genre" id="hero-genre">--</span>
+            </div>
+            <p class="hero-description" id="hero-desc">Loading featured movie...</p>
+            <div class="hero-buttons">
+                <button class="btn-play" id="hero-play"><i class="fas fa-play"></i> Play</button>
+                <button class="btn-info" onclick="scrollToMovies()"><i class="fas fa-info-circle"></i> Browse More</button>
+            </div>
         </div>
-        <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
-    </div>
-</div>
-
-<!-- Upcoming -->
-<div class="row">
-    <h2 class="row-title">🎬 Próximamente</h2>
-    <div class="row-container">
-        <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
-        <div class="row-posters" id="upcoming">
-            <!-- Se llena con JS -->
+        <div class="hero-backdrop">
+            <img src="" alt="" id="hero-img">
+            <div class="hero-gradient"></div>
         </div>
-        <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
-    </div>
-</div>
+    </section>
 
-<!-- Resultados de búsqueda (inicialmente oculto) -->
-<div class="row" id="search-row" style="display: none;">
-    <h2 class="row-title">🔍 Resultados de búsqueda</h2>
-    <div class="row-container">
-        <div class="row-posters" id="search-results"></div>
-    </div>
-</div>
+    <!-- Content Rows -->
+    <section class="content-rows" id="movies">
+        <!-- Trending -->
+        <div class="row">
+            <h2 class="row-title"><i class="fas fa-fire"></i> Trending Now</h2>
+            <div class="row-container">
+                <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+                <div class="row-posters" id="trending"></div>
+                <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Popular -->
+        <div class="row">
+            <h2 class="row-title"><i class="fas fa-star"></i> Popular</h2>
+            <div class="row-container">
+                <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+                <div class="row-posters" id="popular"></div>
+                <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Top Rated -->
+        <div class="row">
+            <h2 class="row-title"><i class="fas fa-trophy"></i> Top Rated</h2>
+            <div class="row-container">
+                <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+                <div class="row-posters" id="top-rated"></div>
+                <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Upcoming -->
+        <div class="row">
+            <h2 class="row-title"><i class="fas fa-calendar"></i> Coming Soon</h2>
+            <div class="row-container">
+                <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+                <div class="row-posters" id="upcoming"></div>
+                <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Search Results (hidden by default) -->
+        <div class="row" id="search-row" style="display: none;">
+            <h2 class="row-title"><i class="fas fa-search"></i> Search Results</h2>
+            <div class="row-container">
+                <div class="row-posters" id="search-results"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>FreeFlix - Watch Free HD Movies & TV Shows Online</p>
+        <p style="font-size: 12px; margin-top: 10px; opacity: 0.6;">Powered by TMDB API</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
